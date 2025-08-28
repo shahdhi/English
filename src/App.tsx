@@ -27,33 +27,7 @@ function App() {
     setResults([]);
   };
 
-  const handleSectionComplete = (score: number, responses: (string | number)[]) => {
-    const currentSection = testSections[currentSectionIndex];
-    const newResult: TestResult = {
-      sectionId: currentSection.id,
-      score,
-      maxScore: currentSection.totalPoints,
-      responses
-    };
-    
-    setResults(prev => [...prev, newResult]);
-    
-    if (currentSectionIndex < testSections.length - 1) {
-      setCurrentSectionIndex(currentSectionIndex + 1);
-    } else {
-      setAppState('results');
-    }
-  };
-
-  const handleNext = () => {
-    // This is handled by handleSectionComplete
-  };
-
-  const handleRestart = () => {
-    setAppState('intro');
-    setCurrentSectionIndex(0);
-    setResults([]);
-  };
+  // ... rest of your existing App.tsx code ...
 
   if (appState === 'intro') {
     return <TestIntro onStartTest={handleStartTest} />;
@@ -63,6 +37,7 @@ function App() {
     return <TestResults results={results} onRestart={handleRestart} />;
   }
 
+  // RENDER TEST SECTIONS DIRECTLY (no separate Test component)
   const currentSection = testSections[currentSectionIndex];
   const getSectionData = () => {
     switch (currentSection.id) {
