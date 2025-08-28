@@ -27,8 +27,8 @@ export const TestIntro: React.FC = () => {
           <div className="border border-gray-200 rounded-lg p-4">
             <h3 className="font-medium text-gray-900 mb-2">Test Sections</h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Vocabulary (4 points)</li>
-              <li>• Grammar (8 points)</li>
+              <li>• Vocabulary (40 points)</li>
+              <li>• Grammar (80 points)</li>
               <li>• Reading Comprehension (12 points)</li>
               <li>• Listening Comprehension (12 points)</li>
               <li>• Writing (10 points)</li>
