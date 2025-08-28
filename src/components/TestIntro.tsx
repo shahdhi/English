@@ -1,14 +1,11 @@
 import React from 'react';
-import { Clock, CheckCircle, AlertCircle, Play } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { AlertCircle, Play } from 'lucide-react';
 
-export const TestIntro: React.FC = () => {
-  const navigate = useNavigate();
+interface TestIntroProps {
+  onStartTest: () => void;
+}
 
-  const handleStartTest = () => {
-    navigate('/test');
-  };
-
+export const TestIntro: React.FC<TestIntroProps> = ({ onStartTest }) => {
   return (
     <div className="max-w-4xl mx-auto px-6 py-8">
       <div className="text-center mb-8">
@@ -65,7 +62,7 @@ export const TestIntro: React.FC = () => {
 
       <div className="text-center">
         <button
-          onClick={handleStartTest}
+          onClick={onStartTest}
           className="inline-flex items-center px-8 py-4 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200 transform hover:scale-105"
         >
           <Play className="w-6 h-6 mr-3" />
