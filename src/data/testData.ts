@@ -246,7 +246,7 @@ export const listeningQuestions: ListeningQuestion[] = [
     audioUrl: 'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
     audioDuration: 30,
     text: "What is the main topic of the audio clip?",
-    options: ['Customer service policies'Customer service policies', 'Music in retail environments', 'Employee training', 'Store layout design'],
+    options: ['Customer service policies', 'Music in retail environments', 'Employee training', 'Store layout design'],
     correctAnswer: 1,
     points: 4
   },
