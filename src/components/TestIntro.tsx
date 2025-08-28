@@ -1,11 +1,14 @@
 import React from 'react';
 import { Clock, CheckCircle, AlertCircle, Play } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-interface TestIntroProps {
-  onStartTest: () => void;
-}
+export const TestIntro: React.FC = () => {
+  const navigate = useNavigate();
 
-export const TestIntro: React.FC<TestIntroProps> = ({ onStartTest }) => {
+  const handleStartTest = () => {
+    navigate('/test');
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-6 py-8">
       <div className="text-center mb-8">
@@ -38,7 +41,7 @@ export const TestIntro: React.FC<TestIntroProps> = ({ onStartTest }) => {
             <ul className="space-y-2 text-sm text-gray-600">
               <li>• Microphone access for speaking section</li>
               <li>• Audio enabled for listening section</li>
-              <li>• Approximately 20-25 minutes</li>
+              <li>• Approximately 20–25 minutes</li>
               <li>• Quiet environment for best results</li>
             </ul>
           </div>
@@ -62,7 +65,7 @@ export const TestIntro: React.FC<TestIntroProps> = ({ onStartTest }) => {
 
       <div className="text-center">
         <button
-          onClick={onStartTest}
+          onClick={handleStartTest}
           className="inline-flex items-center px-8 py-4 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200 transform hover:scale-105"
         >
           <Play className="w-6 h-6 mr-3" />
